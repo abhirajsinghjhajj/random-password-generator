@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🔐 Simple Password Generator</h1>
+            <p class="subtitle">Generate secure passwords quickly</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Password Display -->
+            <section class="password-display">
+                <div class="password-output">
+                    <input 
+                        type="text" 
+                        id="passwordField" 
+                        class="password-field" 
+                        readonly 
+                        placeholder="Click Generate to create a password"
+                    >
+                    <button id="copyBtn" class="copy-btn">📋 Copy</button>
+                </div>
+            </section>
+
+            <!-- Password Options -->
+            <section class="password-options">
+                <h2>Password Options</h2>
+                
+                <div class="form-group">
+                    <label for="lengthSlider">
+                        Password Length: <span id="lengthValue">12</span>
+                    </label>
+                    <input 
+                        type="range" 
+                        id="lengthSlider" 
+                        class="slider"
+                        min="4" 
+                        max="50" 
+                        value="12"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <h3>Include Characters:</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeLowercase" checked>
+                            <span class="checkbox-custom"></span>
+                            Lowercase (a-z)
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeUppercase" checked>
+                            <span class="checkbox-custom"></span>
+                            Uppercase (A-Z)
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeNumbers" checked>
+                            <span class="checkbox-custom"></span>
+                            Numbers (0-9)
+                        </label>
+                        
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="includeSymbols">
+                            <span class="checkbox-custom"></span>
+                            Symbols (!@#$%^&*)
+                        </label>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="generate-btn">
+                    🎲 Generate Password
+                </button>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
